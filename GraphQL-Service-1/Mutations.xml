@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operationGroup type="mutation" name="Mutations" id="5c79e3b0-1499-42ad-81a7-f9b58efa88b5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5c79e3b0-1499-42ad-81a7-f9b58efa88b5fileName">Mutations</con:setting>
+  </con:settings>
+  <con:graphQLOperation name="addCustomer" bindingOperationName="addCustomer" id="9b6f71a9-f7f7-4b7d-ab4c-03864f5197af">
+    <con:settings/>
+    <con:graphQLRequest name="addCustomer" id="4fce434a-ad91-4062-866c-1a2103d32fda">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
+      <con:request>{"query":"mutation {\n  addCustomer(name: $my_name, email: \"string\", age: $my_age) {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":{"my_name":"Tester","my_age":666}}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+    </con:graphQLRequest>
+  </con:graphQLOperation>
+  <con:graphQLOperation name="editCustomer" bindingOperationName="editCustomer" id="ea66626e-ef78-4af0-a734-fa2cbd671458">
+    <con:settings/>
+    <con:graphQLRequest name="editCustomer" id="4797be2c-def5-4a1f-9d91-4027d7edca6a">
+      <con:settings/>
+      <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
+      <con:request>{"query":"mutation {\n  editCustomer(id: \"string\", name: \"string\", email: \"string\", age: 0, extraData: \"2019-07-20\") {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":null}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+    </con:graphQLRequest>
+  </con:graphQLOperation>
+</con:operationGroup>

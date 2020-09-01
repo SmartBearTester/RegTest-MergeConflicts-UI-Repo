@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="fb25ca1b-0563-4ec4-b41d-5dc7602e353c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 2" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fb25ca1b-0563-4ec4-b41d-5dc7602e353cfileName">TestCase-2</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="53aa7b64-24e5-413e-8d8c-aaacff1dd89f">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>3</generatorsTotalNumber>
+          <lastSelectedProperty>2</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>prop_integer</PropertyName0>
+          <repetitionCountprop_integer>0</repetitionCountprop_integer>
+          <repeatValuesprop_integer>false</repeatValuesprop_integer>
+          <IntegerDataGeneratorMinValueprop_integer>1</IntegerDataGeneratorMinValueprop_integer>
+          <IntegerDataGeneratorMaxValueprop_integer>100</IntegerDataGeneratorMaxValueprop_integer>
+          <IntegerDataGeneratorStepValueprop_integer>1</IntegerDataGeneratorStepValueprop_integer>
+          <IntegerDataGeneratorConsequentValuesprop_integer>false</IntegerDataGeneratorConsequentValuesprop_integer>
+          <GeneratorType1>STR</GeneratorType1>
+          <PropertyName1>prop_string</PropertyName1>
+          <repetitionCountprop_string>0</repetitionCountprop_string>
+          <repeatValuesprop_string>false</repeatValuesprop_string>
+          <PasswordDataGeneratorUseSpacesprop_string>true</PasswordDataGeneratorUseSpacesprop_string>
+          <PasswordDataGeneratorUsePunctuationMarksprop_string>true</PasswordDataGeneratorUsePunctuationMarksprop_string>
+          <PasswordDataGeneratorUseLettersprop_string>true</PasswordDataGeneratorUseLettersprop_string>
+          <PasswordDataGeneratorUseDigitsprop_string>true</PasswordDataGeneratorUseDigitsprop_string>
+          <PasswordDataGeneratorMaxCharacterCountprop_string>10</PasswordDataGeneratorMaxCharacterCountprop_string>
+          <PasswordDataGeneratorMinCharacterCountprop_string>5</PasswordDataGeneratorMinCharacterCountprop_string>
+          <GeneratorType2>BOOL</GeneratorType2>
+          <PropertyName2>prop_boolean</PropertyName2>
+          <repetitionCountprop_boolean>0</repetitionCountprop_boolean>
+          <repeatValuesprop_boolean>false</repeatValuesprop_boolean>
+          <boolViewprop_boolean>Classic</boolViewprop_boolean>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>prop_integer</con:property>
+      <con:property>prop_string</con:property>
+      <con:property>prop_boolean</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="JDBC Request" id="b4280f73-8fd1-471b-9469-ba9a4cbbc40d">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>MSSQL</con:dbConnectionName>
+      <con:driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</con:driver>
+      <con:connectionString>jdbc:sqlserver://rapis01.aqa.com.ru:1433;databaseName=DatabaseVariable;user=DatabaseVariable;password=PASS_VALUE</con:connectionString>
+      <con:password>DatabaseVariable</con:password>
+      <con:connectionProperties/>
+      <con:query>Select table1.ID, table1.Name
+From table1</con:query>
+      <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="4c8cf833-2cce-4764-b283-9c1dce27d012">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="7abb9c09-04f4-4687-a52e-823008933bbc">
+    <con:settings/>
+    <con:config>
+      <script>def myText = "initial text";
+log.info(myText);</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="d344201e-45a7-4c23-b04c-e66b98f451a8">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Delay</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

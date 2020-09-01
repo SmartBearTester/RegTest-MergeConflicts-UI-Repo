@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="3d10d760-645c-4fd6-b419-098a55b38cd2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 3" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3d10d760-645c-4fd6-b419-098a55b38cd2fileName">TestCase-3</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep name="GraphQL Mutation" type="graphqltestmutationrequest" id="9c1474c9-e525-4c50-b397-e6234cf8b599">
+    <con:settings/>
+    <con:config interface="GraphQL Service 1" operationName="addCustomer" operationType="mutation" xsi:type="con:GraphQLTestRequestWithSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:request name="GraphQL Mutation" id="bb8de3a6-ed7b-4560-8ff1-c64034bc6c71">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
+        <con:request>{"query":"mutation {\n  addCustomer(name: $my_name, email: \"string\", age: $my_age) {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":{"my_name":"Tester","my_age":"666"}}</con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

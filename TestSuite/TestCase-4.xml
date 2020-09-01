@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="df5221ac-ab23-4804-942a-95b869e0c841" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 4" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="df5221ac-ab23-4804-942a-95b869e0c841fileName">TestCase-4</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restmockresponse" name="REST VirtResponse" id="b50ee5d3-d549-4499-b0aa-a53f093cf072">
+    <con:settings/>
+    <con:config xsi:type="con:RESTMockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>RestService1</con:interface>
+      <con:path>/test</con:path>
+      <con:method>POST</con:method>
+      <con:port>8080</con:port>
+      <con:response mediaType="application/xml" httpResponseStatus="200">
+        <con:responseContent><![CDATA[<array>
+   <name>MY_TEST_XML</name>
+   <name>QWERTY</name>
+   <name>1234567890</name>
+</array>]]></con:responseContent>
+      </con:response>
+      <con:host>localhost</con:host>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

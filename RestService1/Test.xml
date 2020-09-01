@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Test" path="/test" id="548840ac-eef9-429c-9b3d-dd9c08e55805" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="548840ac-eef9-429c-9b3d-dd9c08e55805fileName">Test</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Test" id="d9c0e8d0-2f0a-4185-9b1c-88fd81c16360" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>param1</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>param2</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="81305b44-6a79-4d5a-b1f5-a021b92f08f5" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  &lt;con:entry key="rest_header_1" value="header value 1"/>
+  &lt;con:entry key="rest_header_2" value="qwerty2"/>
+&lt;/xml-fragment></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="param1" value="initial value 1"/>
+        <con:entry key="param2" value="qwerty1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>param1</con:entry>
+        <con:entry>param2</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

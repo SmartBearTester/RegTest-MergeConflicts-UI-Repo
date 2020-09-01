@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operationGroup type="query" name="Queries" id="ace3c93f-27e2-40d6-9401-c3409b01fa4b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ace3c93f-27e2-40d6-9401-c3409b01fa4bfileName">Queries</con:setting>
+  </con:settings>
+  <con:graphQLOperation name="customer" bindingOperationName="customer" id="74697781-6ae2-486a-9bd6-a1b66aebf373">
+    <con:settings/>
+    <con:graphQLRequest name="customer" id="c1374c15-7faa-43ad-a97c-d8a607e11afe">
+      <con:settings/>
+      <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
+      <con:request>{"query":"query {\n  customer(id: \"string\") {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":null}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+    </con:graphQLRequest>
+  </con:graphQLOperation>
+  <con:graphQLOperation name="customers" bindingOperationName="customers" id="5c0d9bf1-8f22-4ee5-87bb-9ac7eae66b27">
+    <con:settings/>
+    <con:graphQLRequest name="customers" id="cd309a07-d8be-432f-a68c-338246d50ebc">
+      <con:settings/>
+      <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
+      <con:request>{"query":"query {\n  customers {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":null}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+    </con:graphQLRequest>
+  </con:graphQLOperation>
+</con:operationGroup>

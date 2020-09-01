@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="28084628-1e84-449e-b374-352ea79217fb" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 5" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="28084628-1e84-449e-b374-352ea79217fbfileName">TestCase-5</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="propertyWaitTestStep" name="Property Wait" id="b9f763a8-b139-436f-b9da-b3b58bcdbafa">
+    <con:settings/>
+    <con:config>
+      <scope>Test Suite Properties</scope>
+      <projectName>git-integration-merge-conflict-ui</projectName>
+      <testSuiteName>TestSuite</testSuiteName>
+      <mockServiceName/>
+      <mockOperationName/>
+      <mockResponseName/>
+      <propertyName>test_suite_property</propertyName>
+      <compareMethodName>Equals (==)</compareMethodName>
+      <valueToCompare>initial</valueToCompare>
+      <timeout>10</timeout>
+      <timeoutMeasureName>seconds</timeoutMeasureName>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
