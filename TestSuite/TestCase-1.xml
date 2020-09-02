@@ -15,12 +15,61 @@
 &lt;/xml-fragment></con:setting>
         </con:settings>
         <con:encoding>UTF-8</con:encoding>
-        <con:endpoint>http://localhost:8080</con:endpoint>
+        <con:endpoint>http://remote:8080</con:endpoint>
         <con:request>{\r
-   "array" : [\r
-      "item1",\r
-      "item2",\r
-      "item3"\r
+   "id" : "0001",\r
+   "type" : "remote value",\r
+   "name" : "Cake",\r
+   "ppu" : 0.55,\r
+   "batters" : {\r
+      "batter" : [\r
+         {\r
+            "id" : "1001",\r
+            "type" : "Regular"\r
+         },\r
+         {\r
+            "id" : "1002",\r
+            "type" : "Chocolate"\r
+         },\r
+         {\r
+            "id" : "1003",\r
+            "type" : "Blueberry"\r
+         },\r
+         {\r
+            "id" : "1004",\r
+            "type" : "Devil's Food"\r
+         }\r
+      ]\r
+   },\r
+   "topping" : [\r
+      {\r
+         "id" : "5001",\r
+         "type" : "None"\r
+      },\r
+      {\r
+         "id" : "5002",\r
+         "type" : "Glazed"\r
+      },\r
+      {\r
+         "id" : "5005",\r
+         "type" : "Sugar"\r
+      },\r
+      {\r
+         "id" : "5007",\r
+         "type" : "Powdered Sugar"\r
+      },\r
+      {\r
+         "id" : "5006",\r
+         "type" : "Chocolate with Sprinkles"\r
+      },\r
+      {\r
+         "id" : "5003",\r
+         "type" : "Chocolate"\r
+      },\r
+      {\r
+         "id" : "5004",\r
+         "type" : "Maple"\r
+      }\r
    ]\r
 }</con:request>
         <con:assertion type="Valid HTTP Status Codes" id="30356e63-7f80-443f-8b30-ba869609aba4" name="Valid HTTP Status Codes">
@@ -40,8 +89,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="param1" value="initial value 1"/>
-          <con:entry key="param2" value="qwerty1"/>
+          <con:entry key="param1" value="remote value 1"/>
+          <con:entry key="param2" value="xxx"/>
         </con:parameters>
       </con:restRequest>
     </con:config>

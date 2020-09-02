@@ -14,9 +14,9 @@
       <mockOperationName/>
       <mockResponseName/>
       <propertyName>test_suite_property</propertyName>
-      <compareMethodName>Equals (==)</compareMethodName>
-      <valueToCompare>initial</valueToCompare>
-      <timeout>10</timeout>
+      <compareMethodName>Not equal to (!=)</compareMethodName>
+      <valueToCompare>remote</valueToCompare>
+      <timeout>60</timeout>
       <timeoutMeasureName>seconds</timeoutMeasureName>
     </con:config>
   </con:testStep>

@@ -12,8 +12,8 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:encoding>UTF-8</con:encoding>
-        <con:endpoint>http://ubuntuserverlts.aqa.com.ru:4000/graphql</con:endpoint>
-        <con:request>{"query":"mutation {\n  addCustomer(name: $my_name, email: \"string\", age: $my_age) {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":{"my_name":"Tester","my_age":"666"}}</con:request>
+        <con:endpoint>http://remote:4000/graphql</con:endpoint>
+        <con:request>{"query":"mutation {\n  addCustomer(name: $my_name, email: \"remote value\", age: $my_age) {\n    id\n    name\n    email\n    age\n    status\n    products {\n      productID\n      productName\n      quantity\n      info {\n        made\n        disign\n        warranty\n        AnnualFailureRate\n      }\n    }\n    data {\n      LicenseType\n      Status\n    }\n  }\n}\n","operationName":null,"variables":{"my_name":"Remote","my_age":"600"}}</con:request>
         <con:credentials>
           <con:authType>No Authorization</con:authType>
         </con:credentials>

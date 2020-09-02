@@ -5,10 +5,9 @@
   </con:settings>
   <con:testStepSecurityTest>
     <con:testStepId>d21044ed-779e-428a-b629-0b57ecfd05ba</con:testStepId>
-    <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="2f3c881a-c8e5-4c1d-8965-7fa854cb1df7" applyForFailedStep="false" disabled="false">
+    <con:testStepSecurityScan type="CrossSiteScriptingScan" name="Cross Site Scripting" id="2f3c881a-c8e5-4c1d-8965-7fa854cb1df7" applyForFailedStep="false" disabled="false" runOnlyOnce="false">
       <con:settings/>
       <con:config xsi:type="con:CrossSiteScriptingScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-        <con:parameterExposureStrings>&lt;PLAINTEXT></con:parameterExposureStrings>
         <con:parameterExposureStrings>';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//-->&lt;/SCRIPT>">'>&lt;SCRIPT>alert(String.fromCharCode(88,83,83))&lt;/SCRIPT></con:parameterExposureStrings>
         <con:parameterExposureStrings>'';!--"&lt;XSS>=&amp;{()}</con:parameterExposureStrings>
         <con:parameterExposureStrings>&lt;SCRIPT SRC=http://soapui.org/xss.js>&lt;/SCRIPT></con:parameterExposureStrings>
@@ -100,6 +99,7 @@
         <con:parameterExposureStrings>&lt;SCRIPT a=`>` SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
         <con:parameterExposureStrings>&lt;SCRIPT a=">'>" SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
         <con:parameterExposureStrings>&lt;SCRIPT>document.write("&lt;SCRI");&lt;/SCRIPT>PT SRC="http://soapui.org/xss.js">&lt;/SCRIPT></con:parameterExposureStrings>
+        <con:parameterExposureStrings>remote value</con:parameterExposureStrings>
       </con:config>
       <con:assertion type="Sensitive Information Exposure" id="c14a3f26-5a4a-4b76-9c5e-e1803bd84796" name="Sensitive Information Exposure">
         <con:configuration/>
@@ -117,15 +117,15 @@
       </con:checkedParameters>
       <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <con:strategy>ONE_BY_ONE</con:strategy>
-        <con:delay>100</con:delay>
+        <con:delay>60</con:delay>
       </con:executionStrategy>
     </con:testStepSecurityScan>
-    <con:testStepSecurityProScan type="JsonFuzzingScan" name="JSON Fuzzing Scan" id="f65bdd80-9f20-4e12-a7d5-c03ca9e5d7e4" applyForFailedStep="false" disabled="false">
+    <con:testStepSecurityProScan type="JsonFuzzingScan" name="JSON Fuzzing Scan" id="f65bdd80-9f20-4e12-a7d5-c03ca9e5d7e4" applyForFailedStep="false" disabled="false" runOnlyOnce="false">
       <con:settings/>
       <con:config xsi:type="con:JsonFuzzerScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-        <con:minimal>5</con:minimal>
-        <con:maximal>15</con:maximal>
-        <con:numberOfRequest>100</con:numberOfRequest>
+        <con:minimal>6</con:minimal>
+        <con:maximal>16</con:maximal>
+        <con:numberOfRequest>600</con:numberOfRequest>
       </con:config>
       <con:assertion type="Sensitive Information Exposure" id="7d66d4bf-663d-4192-89b9-3dd86ec58fe8" name="Sensitive Information Exposure">
         <con:configuration/>
@@ -134,13 +134,17 @@
       <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:executionStrategy xsi:nil="true" immutable="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <con:strategy>ALL_AT_ONCE</con:strategy>
-        <con:delay>100</con:delay>
+        <con:delay>66</con:delay>
       </con:executionStrategy>
     </con:testStepSecurityProScan>
     <con:testStepSecurityProScan type="HttpMethodFuzzingScan" name="HTTP Method Fuzzing" id="baeb186e-01b4-478a-aaa0-3e3779ed7d33" applyForFailedStep="false" disabled="false">
       <con:settings/>
       <con:config xsi:type="con:HttpMethodFuzzingScan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-        <con:deselectedMethods/>
+        <con:deselectedMethods>
+          <con:entry>GET</con:entry>
+          <con:entry>PUT</con:entry>
+          <con:entry>DELETE</con:entry>
+        </con:deselectedMethods>
       </con:config>
       <con:assertion type="Sensitive Information Exposure" id="22bb3eec-6aaf-44aa-a837-9cb34eed7aa2" name="Sensitive Information Exposure">
         <con:configuration/>
@@ -157,7 +161,7 @@
       <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <con:strategy>ONE_BY_ONE</con:strategy>
-        <con:delay>100</con:delay>
+        <con:delay>67</con:delay>
       </con:executionStrategy>
     </con:testStepSecurityProScan>
   </con:testStepSecurityTest>

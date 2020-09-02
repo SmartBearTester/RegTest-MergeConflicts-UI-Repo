@@ -13,7 +13,7 @@
       <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
       <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
       <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
-      <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+      <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">60</con1:property>
       <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">Relative</con1:property>
       <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
       <con1:property propagates="true" key="ModelItem.id" type="java.lang.String">ef985b60-6081-444e-8a86-bea745eab68b</con1:property>
@@ -64,7 +64,7 @@
         <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
         <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
         <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
-        <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+        <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">60</con1:property>
         <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
         <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
       </con1:properties>
@@ -114,12 +114,12 @@
           <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
           <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
           <con1:property propagates="true" key="limitVU" type="java.lang.Long">100</con1:property>
-          <con1:property propagates="true" key="baseVU" type="java.lang.Long">0</con1:property>
-          <con1:property propagates="true" key="peakVU" type="java.lang.Long">10</con1:property>
+          <con1:property propagates="true" key="baseVU" type="java.lang.Long">6</con1:property>
+          <con1:property propagates="true" key="peakVU" type="java.lang.Long">36</con1:property>
           <con1:property propagates="true" key="rampUpDuration" type="java.lang.Long">300</con1:property>
           <con1:property propagates="true" key="rampDownDuration" type="java.lang.Long">300</con1:property>
-          <con1:property propagates="true" key="peakDuration" type="java.lang.Long">3000</con1:property>
-          <con1:property propagates="true" key="waitTime" type="java.lang.Long">1000</con1:property>
+          <con1:property propagates="true" key="peakDuration" type="java.lang.Long">3900</con1:property>
+          <con1:property propagates="true" key="waitTime" type="java.lang.Long">5000</con1:property>
         </con1:properties>
         <con1:attributes>
           <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ramp Sequence (VU)</con1:property>

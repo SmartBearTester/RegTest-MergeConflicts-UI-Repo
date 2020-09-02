@@ -8,7 +8,7 @@
   <con:properties>
     <con:property>
       <con:name>test_suite_property</con:name>
-      <con:value>Suite initial value</con:value>
+      <con:value>Suite remote value</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
